@@ -215,9 +215,9 @@ export const PORTFOLIO_COPY = {
       role: 'Desarrollador Full Stack & Automatización de Procesos',
       valueProposition:
         'Desarrollo aplicaciones web y herramientas internas que automatizan procesos operativos, refuerzan el control de accesos y eliminan tareas manuales en empresas.',
-      differentiatorTitle: 'Mi Diferenciador (DAW + DAM)',
+      differentiatorTitle: 'Mi Diferenciador (Titulado DAW · Cursando DAM)',
       differentiatorText:
-        'Doble perfil técnico en Aplicaciones Web (DAW) y Multiplataforma (DAM) con experiencia real en empresa transformando reglas de negocio (control horario, seguridad en bajas/vacaciones y gestión de flotas) en software funcional.',
+        'Titulado en Desarrollo de Aplicaciones Web (DAW) y cursando actualmente Desarrollo de Aplicaciones Multiplataforma (DAM), con experiencia real transformando reglas de negocio (control horario, bloqueos de seguridad en bajas/vacaciones y gestión de flotas) en software funcional.',
       availabilityTitle: 'Objetivo y Modalidad',
       availabilitySpain: 'España: Presencial · Híbrido · Teletrabajo',
       availabilityAbroad: 'Extranjero: Teletrabajo · Híbrido / Presencial según oferta',
@@ -375,9 +375,9 @@ export const PORTFOLIO_COPY = {
       role: 'Full Stack Developer & Process Automation',
       valueProposition:
         'I build web applications and internal business tools that automate workflows, enforce security access controls, and eliminate manual tasks.',
-      differentiatorTitle: 'My Differentiator (DAW + DAM)',
+      differentiatorTitle: 'My Differentiator (DAW Graduate · Pursuing DAM)',
       differentiatorText:
-        'Dual Higher Degree profile in Web (DAW) and Multiplatform (DAM) Development with real company experience turning operational rules (shift tracking, leave security locks, and fleet tracking) into production software.',
+        'Graduated in Web Application Development (DAW) and currently pursuing Multiplatform Application Development (DAM), with real company experience turning business rules (shift limits, leave security locks, and fleet tracking) into working software.',
       availabilityTitle: 'Target & Work Mode',
       availabilitySpain: 'Spain: On-site · Hybrid · Remote',
       availabilityAbroad: 'International: Remote · Hybrid / On-site depending on offer',
