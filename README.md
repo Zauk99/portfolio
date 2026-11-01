@@ -4,8 +4,7 @@ Portfolio profesional desarrollado con **Angular 21**, **TypeScript estricto**, 
 
 ## Capturas de pantalla
 
-- `docs/screenshot-pokedex-mode.png` — *[COMPLETAR: Añadir captura en Modo Pokédex]*
-- `docs/screenshot-fast-mode.png` — *[COMPLETAR: Añadir captura en Modo Rápido Reclutador]*
+![alt text](image.png)
 
 ## Stack Tecnológico del Proyecto
 
@@ -21,17 +20,3 @@ Portfolio profesional desarrollado con **Angular 21**, **TypeScript estricto**, 
 2. **HTML inicial con contenido real**: `index.html` incluye contenido semántico real dentro de `<app-root>` junto con metadatos Open Graph, Twitter Card y `JSON-LD` (`Person`) para indexación inmediata.
 3. **Mantenibilidad en un único archivo**: Todos los textos bilingües (`ES`/`EN`), proyectos y enlaces de contacto residen en `src/app/data/portfolio.data.ts`.
 4. **Accesibilidad WCAG AA**: Navegación completa por teclado (`skip-link`, `:focus-visible`), soporte nativo para `prefers-reduced-motion: reduce` y botón de **Modo Rápido**.
-
-## Cómo ejecutar el proyecto en local
-
-# 1. Instalar dependencias
-npm install
-
-# 2. Iniciar servidor de desarrollo en http://localhost:4200
-npm start
-
-# 3. Compilar para producción
-npm run build
-
-# 4. Ejecutar tests unitarios con Vitest
-npm test
