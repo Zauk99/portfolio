@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "portfolio-linfantee": {
+    "portfolio-pablo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
