@@ -75,10 +75,10 @@ export const PROJECTS_DATA: Record<Language, ProjectEntry[]> = {
         'Implementación de una arquitectura Backend for Frontend (BFF) con Java, Spring Boot y Maven, renderizando vistas dinámicas con Thymeleaf e integrando en el cliente una Pokédex interactiva y dos minijuegos programados en Vanilla JavaScript, HTML5 y CSS3.',
       stack: ['Java', 'Spring Boot', 'Thymeleaf', 'JavaScript', 'HTML5', 'CSS3', 'Maven'],
       resultText:
-        'Portal integral con Pokédex interactiva y 2 minijuegos integrados',
+        'Portal integral con noticias, Pokédex interactiva y 2 minijuegos integrados consumiendo API propia.',
       stats: [
-        { label: 'MÓDULOS INTERACTIVOS', value: 'Noticias + Pokédex + 2 Minijuegos', percentage: 92 },
-        { label: 'ARQUITECTURA BFF', value: '[COMPLETAR MÉTRICA]', percentage: 88 }
+        { label: 'MÓDULOS INTERACTIVOS', value: 'Noticias + Pokédex + 2 Minijuegos', percentage: 94 },
+        { label: 'ARQUITECTURA BFF', value: 'Renderizado SSR con Thymeleaf + JS', percentage: 90 }
       ],
       repoUrl: 'https://github.com/Zauk99/ELdK',
       demoUrl: ''
@@ -101,10 +101,10 @@ export const PROJECTS_DATA: Record<Language, ProjectEntry[]> = {
         'Docker Compose'
       ],
       resultText:
-        'API REST desacoplada con control de roles y base de datos contenerizada',
+        'API REST desacoplada con control de acceso por roles (RBAC) y base de datos PostgreSQL contenerizada.',
       stats: [
-        { label: 'SEGURIDAD Y PERSISTENCIA', value: 'Spring Security + JPA / PostgreSQL', percentage: 94 },
-        { label: 'ENTORNO REPRODUCIBLE', value: 'Docker & Docker Compose', percentage: 95 }
+        { label: 'SEGURIDAD Y PERSISTENCIA', value: 'Spring Security + JPA / PostgreSQL', percentage: 95 },
+        { label: 'DESPLIEGUE EN CONTENEDORES', value: 'Orquestado con Docker Compose', percentage: 96 }
       ],
       repoUrl: 'https://github.com/Zauk99/ELdK_Api',
       demoUrl: ''
@@ -119,13 +119,13 @@ export const PROJECTS_DATA: Record<Language, ProjectEntry[]> = {
         'Desarrollo de una Progressive Web App (PWA) instalable que recrea la interfaz y la icónica Click Wheel del iPod Classic usando CSS Grid/Variables y Vanilla JS, con persistencia de archivos de audio en cliente mediante IndexedDB y ejecución sin conexión vía Service Worker.',
       stack: ['JavaScript', 'IndexedDB', 'Service Worker', 'HTML5', 'CSS3'],
       resultText:
-        'Reproductor 100% Offline e instalable alojado en GitHub Pages',
+        'Reproductor 100% Offline e instalable con persistencia local de audio alojado en GitHub Pages.',
       stats: [
-        { label: 'AUTONOMÍA OFFLINE (SW + IDB)', value: '100% Sin Conexión', percentage: 100 },
-        { label: 'FIDELIDAD INTERFAZ CLICK WHEEL', value: '[COMPLETAR MÉTRICA]', percentage: 94 }
+        { label: 'AUTONOMÍA OFFLINE (SW + IDB)', value: '100% Funcional Sin Conexión', percentage: 100 },
+        { label: 'INTERFAZ Y PERSISTENCIA', value: 'Click Wheel Táctil + Audio en IndexedDB', percentage: 95 }
       ],
       repoUrl: 'https://github.com/Zauk99/iOS15_iPod',
-      demoUrl: 'https://zauk99.github.io/iOS15_iPod/'
+      demoUrl: ''
     }
   ],
   en: [
@@ -139,10 +139,10 @@ export const PROJECTS_DATA: Record<Language, ProjectEntry[]> = {
         'Built a Backend for Frontend (BFF) architecture using Java, Spring Boot, and Maven, rendering server-side dynamic views with Thymeleaf and integrating an interactive Pokédex plus two custom minigames in Vanilla JavaScript, HTML5, and CSS3.',
       stack: ['Java', 'Spring Boot', 'Thymeleaf', 'JavaScript', 'HTML5', 'CSS3', 'Maven'],
       resultText:
-        'Full portal featuring an interactive Pokédex and 2 built-in minigames · [COMPLETE METRIC: e.g. views or indexed entries]',
+        'Complete web portal featuring news, an interactive Pokédex, and 2 built-in minigames powered by a custom API.',
       stats: [
-        { label: 'INTERACTIVE MODULES', value: 'News + Pokédex + 2 Minigames', percentage: 92 },
-        { label: 'BFF ARCHITECTURE', value: '[COMPLETE METRIC]', percentage: 88 }
+        { label: 'INTERACTIVE MODULES', value: 'News + Pokédex + 2 Minigames', percentage: 94 },
+        { label: 'BFF ARCHITECTURE', value: 'Thymeleaf SSR + Vanilla JS', percentage: 90 }
       ],
       repoUrl: 'https://github.com/Zauk99/ELdK',
       demoUrl: ''
@@ -165,10 +165,10 @@ export const PROJECTS_DATA: Record<Language, ProjectEntry[]> = {
         'Docker Compose'
       ],
       resultText:
-        'Decoupled REST API with role-based security and containerized database · [COMPLETE METRIC: e.g. total endpoints or JPA entities]',
+        'Decoupled REST API with role-based access control (RBAC) and containerized PostgreSQL database.',
       stats: [
-        { label: 'SECURITY & PERSISTENCE', value: 'Spring Security + JPA / PostgreSQL', percentage: 94 },
-        { label: 'REPRODUCIBLE ENVIRONMENT', value: 'Docker & Docker Compose', percentage: 95 }
+        { label: 'SECURITY & PERSISTENCE', value: 'Spring Security + JPA / PostgreSQL', percentage: 95 },
+        { label: 'CONTAINERIZED DEPLOYMENT', value: 'Orchestrated via Docker Compose', percentage: 96 }
       ],
       repoUrl: 'https://github.com/Zauk99/ELdK_Api',
       demoUrl: ''
@@ -183,13 +183,13 @@ export const PROJECTS_DATA: Record<Language, ProjectEntry[]> = {
         'Engineered an installable Progressive Web App (PWA) recreating the classic iPod interface and tactile Click Wheel with CSS Grid/Variables and Vanilla JS, persisting audio files locally in IndexedDB and enabling full offline playback via Service Workers.',
       stack: ['JavaScript', 'IndexedDB', 'Service Worker', 'HTML5', 'CSS3'],
       resultText:
-        '100% Offline installable web player hosted on GitHub Pages · [COMPLETE METRIC: e.g. storage or startup speed]',
+        '100% Offline installable web player with local audio persistence hosted on GitHub Pages.',
       stats: [
         { label: 'OFFLINE AUTONOMY (SW + IDB)', value: '100% Offline Ready', percentage: 100 },
-        { label: 'CLICK WHEEL UI FIDELITY', value: '[COMPLETE METRIC]', percentage: 94 }
+        { label: 'UI & LOCAL STORAGE', value: 'Tactile Click Wheel + IndexedDB Audio', percentage: 95 }
       ],
       repoUrl: 'https://github.com/Zauk99/iOS15_iPod',
-      demoUrl: 'https://zauk99.github.io/iOS15_iPod/'
+      demoUrl: ''
     }
   ]
 };
@@ -312,7 +312,7 @@ export const PORTFOLIO_COPY = {
       subtitle: 'Hitos reales verificados en entorno empresarial y formación oficial en desarrollo.',
       items: [
         {
-          badgeId: 'GIMNASIO EMPRESARIAL #01',
+          badgeId: 'GIMNASIO #01',
           role: 'Desarrollador & Soporte de Sistemas (Prácticas)',
           organization: 'Texla Renovables',
           period: 'Febrero 2026 - Mayo 2026',
@@ -327,7 +327,7 @@ export const PORTFOLIO_COPY = {
           ]
         },
         {
-          badgeId: 'MEDALLA ACADÉMICA #02',
+          badgeId: 'MEDALLA #02',
           role: 'Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)',
           organization: 'Instituto Velázquez / Formación Profesional Oficial',
           period: '2026 - Actual',
@@ -338,7 +338,7 @@ export const PORTFOLIO_COPY = {
           ]
         },
         {
-          badgeId: 'MEDALLA ACADÉMICA #01',
+          badgeId: 'MEDALLA #01',
           role: 'Grado Superior en Desarrollo de Aplicaciones Web (DAW)',
           organization: 'Colegio Altair / Formación Profesional Oficial',
           period: '2024 - 2026',
