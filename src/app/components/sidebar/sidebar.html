@@ -1,0 +1,99 @@
+<div class="trainer-card pokedex-card">
+  <!-- Cabecera de la Tarjeta de Entrenador -->
+  <div class="trainer-card-header">
+    <span class="pixel-tag">{{ state.copy().trainer.cardLabel }}</span>
+    <span class="badge-count" title="2 Grados Superiores + Experiencia en Empresa">★ 3 BADGES</span>
+  </div>
+
+  <!-- Identidad y Rol Claro en el Primer Vistazo -->
+  <div class="trainer-identity">
+    <div class="avatar-frame">
+      <img
+        src="/foto.jpg"
+        alt="Pablo Herrera Domínguez"
+        class="trainer-photo"
+        width="72"
+        height="72" />
+    </div>
+
+    <div class="identity-text">
+      <h1 class="trainer-name">{{ state.copy().trainer.name }}</h1>
+      <p class="trainer-role">{{ state.copy().trainer.role }}</p>
+    </div>
+  </div>
+
+  <!-- Frase de propuesta de valor concreta -->
+  <p class="value-prop">
+    {{ state.copy().trainer.valueProposition }}
+  </p>
+
+  <!-- Mi diferenciador (DAW + DAM + Automatización real) -->
+  <div class="info-box">
+    <h2 class="box-title">{{ state.copy().trainer.differentiatorTitle }}</h2>
+    <p class="box-text">{{ state.copy().trainer.differentiatorText }}</p>
+  </div>
+
+  <!-- Objetivo y Disponibilidad -->
+  <div class="info-box">
+    <h2 class="box-title">{{ state.copy().trainer.availabilityTitle }}</h2>
+    <ul class="availability-list">
+      <li>{{ state.copy().trainer.availabilitySpain }}</li>
+      <li>{{ state.copy().trainer.availabilityAbroad }}</li>
+    </ul>
+  </div>
+
+  <!-- Acción Principal: Descargar CV -->
+  <a
+    class="cv-download-btn"
+    [href]="state.contact.cvUrl"
+    download="CV_Pablo_Herrera_Dominguez.pdf"
+    (click)="state.playBeep(740, 0.06)">
+    {{ state.copy().trainer.downloadCv }}
+  </a>
+
+  <!-- Contacto y Enlaces Directos (Protegidos contra enlaces rotos mientras tengan [EMAIL], etc.) -->
+  <div class="contact-block">
+    <h2 class="box-title">{{ state.copy().trainer.contactTitle }}</h2>
+
+    <div class="contact-links-list">
+      <!-- EMAIL -->
+      @if (!state.isPlaceholder(state.contact.email)) {
+        <a class="contact-item" [href]="'mailto:' + state.contact.email" (click)="state.playBeep(600, 0.05)">
+          <span class="contact-key">EMAIL</span>
+          <span class="contact-val">{{ state.contact.email }}</span>
+        </a>
+      } @else {
+        <div class="contact-item placeholder-item" [title]="state.copy().trainer.pendingConfigHint">
+          <span class="contact-key">EMAIL</span>
+          <span class="contact-val">{{ state.contact.email }}</span>
+        </div>
+      }
+
+      <!-- GITHUB -->
+      @if (!state.isPlaceholder(state.contact.github)) {
+        <a class="contact-item" [href]="state.contact.github" target="_blank" rel="noopener noreferrer" (click)="state.playBeep(600, 0.05)">
+          <span class="contact-key">GITHUB</span>
+          <span class="contact-val">GitHub ↗</span>
+        </a>
+      } @else {
+        <div class="contact-item placeholder-item" [title]="state.copy().trainer.pendingConfigHint">
+          <span class="contact-key">GITHUB</span>
+          <span class="contact-val">{{ state.contact.github }}</span>
+        </div>
+      }
+
+      <!-- LINKEDIN -->
+      @if (!state.isPlaceholder(state.contact.linkedin)) {
+        <a class="contact-item" [href]="state.contact.linkedin" target="_blank" rel="noopener noreferrer" (click)="state.playBeep(600, 0.05)">
+          <span class="contact-key">LINKEDIN</span>
+          <span class="contact-val">LinkedIn ↗</span>
+        </a>
+      } @else {
+        <div class="contact-item placeholder-item" [title]="state.copy().trainer.pendingConfigHint">
+          <span class="contact-key">LINKEDIN</span>
+          <span class="contact-val">{{ state.contact.linkedin }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</div>

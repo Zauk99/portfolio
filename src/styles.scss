@@ -1,0 +1,132 @@
+/* ==========================================================================
+   PALETA OFICIAL (MÁX. 5 COLORES BASE) + VARIABLES DE SISTEMA
+   1. #F4F1EA -> Papel manual (Fondo claro / Texto oscuro)
+   2. #12161B -> Carbón consola (Texto claro / Fondo oscuro)
+   3. #D92B2B -> Rojo Pokédex (Acento primario / Foco / Alertas)
+   4. #2E6F40 -> Verde pantalla retro (Éxito / Barras de impacto / Estado activo)
+   5. #D8D2C5 -> Gris cartucho (Paneles secundarios / Bordes / Rejilla)
+   ========================================================================== */
+
+:root {
+  --c-paper: #F4F1EA;
+  --c-charcoal: #12161B;
+  --c-crimson: #D92B2B;
+  --c-emerald: #2E6F40;
+  --c-cartridge: #D8D2C5;
+
+  /* Mapeo Semántico - Modo Claro (Por defecto) */
+  --bg-primary: var(--c-paper);
+  --bg-surface: #FFFFFF;
+  --bg-panel: var(--c-cartridge);
+  --text-primary: var(--c-charcoal);
+  --text-secondary: #3B424C;
+  --border-color: var(--c-charcoal);
+  --border-subtle: var(--c-cartridge);
+  --accent-primary: var(--c-crimson);
+  --accent-success: var(--c-emerald);
+  --shadow-hard: 4px 4px 0px var(--c-charcoal);
+
+  /* Tipografías con tamaños fluidos */
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --fs-hero: clamp(1.35rem, 2.5vw, 2rem);
+  --fs-h2: clamp(1.05rem, 1.8vw, 1.35rem);
+  --fs-h3: clamp(0.95rem, 1.3vw, 1.15rem);
+  --fs-body: clamp(0.92rem, 1vw, 1.02rem);
+  --fs-pixel-sm: clamp(0.62rem, 0.8vw, 0.72rem);
+}
+
+/* Mapeo Semántico - Modo Oscuro (Sin un solo !important) */
+body.dark-theme {
+  --bg-primary: var(--c-charcoal);
+  --bg-surface: #1B2129;
+  --bg-panel: #252D38;
+  --text-primary: var(--c-paper);
+  --text-secondary: var(--c-cartridge);
+  --border-color: var(--c-cartridge);
+  --border-subtle: #2F3846;
+  --accent-primary: #FF4747;
+  --accent-success: #45A15E;
+  --shadow-hard: 4px 4px 0px #000000;
+}
+
+/* Reset accesible y mobile-first */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  /* Sutil cuadrícula técnica de manual de campo japonés */
+  background-image: radial-gradient(var(--border-subtle) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Modo Rápido Reclutador: elimina adornos gamificados y prioriza lectura ejecutiva */
+body.fast-mode {
+  background-image: none;
+
+  .pixel-tag,
+  .pokedex-deco {
+    display: none;
+  }
+}
+
+/* Accesibilidad de teclado WCAG AA */
+:focus-visible {
+  outline: 3px solid var(--accent-primary);
+  outline-offset: 3px;
+}
+
+/* Enlace para saltar navegación con teclado */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 9999;
+  background: var(--accent-primary);
+  color: #FFFFFF;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid var(--border-color);
+
+  &:focus {
+    top: 1rem;
+  }
+}
+
+/* Utilidad de caja estilo chasis Pokédex (esquinas rectas/biseladas, nunca rounded-2xl genérico) */
+.pokedex-card {
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-color);
+  box-shadow: var(--shadow-hard);
+  position: relative;
+}
+
+/* Respeto estricto a usuarios que prefieren reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

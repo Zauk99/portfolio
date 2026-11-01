@@ -1,0 +1,198 @@
+<!-- Menú de Combate / Navegación rápida -->
+<nav class="command-nav pokedex-card" aria-label="Secciones del portfolio">
+  <a href="#pokedex-projects" class="cmd-link" (click)="state.playBeep(500, 0.04)">▸ {{ state.copy().nav.projects }}</a>
+  <a href="#party-stack" class="cmd-link" (click)="state.playBeep(500, 0.04)">▸ {{ state.copy().nav.party }}</a>
+  <a href="#league-experience" class="cmd-link" (click)="state.playBeep(500, 0.04)">▸ {{ state.copy().nav.league }}</a>
+  <a href="#pokemon-center" class="cmd-link" (click)="state.playBeep(500, 0.04)">▸ {{ state.copy().nav.save }}</a>
+</nav>
+
+<!-- 1. HERO / PANTALLA DE ENCUENTRO -->
+<section class="hero-encounter pokedex-card" aria-labelledby="hero-heading">
+  <div class="encounter-banner pixel-tag">
+    <span>{{ state.copy().hero.encounterTag }}</span>
+    <span>LVL 2026 // DAW + DAM</span>
+  </div>
+  <h2 id="hero-heading" class="hero-headline">{{ state.copy().hero.headline }}</h2>
+  <div class="dialogue-box" aria-live="polite">
+    <p class="dialogue-text">{{ displayedDialogue() }}</p>
+  </div>
+  <div class="hero-actions">
+    <a href="#pokedex-projects" class="btn-primary">{{ state.copy().hero.ctaPrimary }}</a>
+    <a href="#pokemon-center" class="btn-secondary">{{ state.copy().hero.ctaSecondary }}</a>
+  </div>
+</section>
+
+<!-- 2. PROYECTOS DESTACADOS -> REGISTROS DE POKÉDEX (#001...) -->
+<section id="pokedex-projects" class="section-block" aria-labelledby="projects-heading">
+  <header class="section-header">
+    <h2 id="projects-heading" class="section-title">{{ state.copy().projectsSection.title }}</h2>
+    <p class="section-subtitle">{{ state.copy().projectsSection.subtitle }}</p>
+  </header>
+
+  <div class="projects-grid">
+    @for (proj of state.projects(); track proj.id) {
+      <article class="project-entry pokedex-card">
+        <div class="entry-top">
+          <span class="entry-number">{{ proj.id }}</span>
+          <h3 class="entry-title">{{ proj.name }}</h3>
+          <span class="entry-type-badge">{{ proj.categoryType }}</span>
+        </div>
+
+        <div class="case-study-grid">
+          <div class="case-box">
+            <span class="case-label">{{ state.copy().projectsSection.problemLabel }}</span>
+            <p class="case-text">{{ proj.problem }}</p>
+          </div>
+          <div class="case-box">
+            <span class="case-label">{{ state.copy().projectsSection.solutionLabel }}</span>
+            <p class="case-text">{{ proj.solution }}</p>
+          </div>
+        </div>
+
+        <div class="stats-panel">
+          <div class="result-highlight">
+            <strong>{{ state.copy().projectsSection.resultLabel }}:</strong> {{ proj.resultText }}
+          </div>
+          @for (stat of proj.stats; track stat.label) {
+            <div class="stat-row">
+              <div class="stat-meta">
+                <span>{{ stat.label }}</span>
+                <span>{{ stat.value }}</span>
+              </div>
+              <div class="stat-bar-track" role="progressbar" [attr.aria-valuenow]="stat.percentage" aria-valuemin="0" aria-valuemax="100">
+                <div class="stat-bar-fill" [style.width.%]="stat.percentage"></div>
+              </div>
+            </div>
+          }
+        </div>
+
+        <div class="entry-footer">
+          <div class="stack-pills">
+            @for (tech of proj.stack; track tech) {
+              <span class="tech-pill">{{ tech }}</span>
+            }
+          </div>
+          <div class="entry-links">
+            @if (!state.isPlaceholder(proj.repoUrl)) {
+              <a [href]="proj.repoUrl" target="_blank" rel="noopener noreferrer" class="entry-btn">{{ state.copy().projectsSection.repoBtn }} ↗</a>
+            } @else {
+              <span class="entry-btn placeholder-tag">{{ proj.repoUrl }}</span>
+            }
+            @if (proj.demoUrl && !state.isPlaceholder(proj.demoUrl)) {
+              <a [href]="proj.demoUrl" target="_blank" rel="noopener noreferrer" class="entry-btn">{{ state.copy().projectsSection.demoBtn }} ↗</a>
+            }
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<!-- 3. STACK -> EQUIPO DE 6 CASILLAS + MOCHILA -->
+<section id="party-stack" class="section-block" aria-labelledby="stack-heading">
+  <header class="section-header">
+    <h2 id="stack-heading" class="section-title">{{ state.copy().stackSection.title }}</h2>
+    <p class="section-subtitle">{{ state.copy().stackSection.subtitle }}</p>
+  </header>
+
+  <div class="party-grid">
+    @for (slot of state.copy().stackSection.party; track slot.slotNumber) {
+      <article class="party-slot pokedex-card">
+        <div class="slot-top">
+          <span class="slot-num">{{ slot.slotNumber }}</span>
+          <span class="slot-lvl">{{ slot.levelLabel }}</span>
+        </div>
+        <h3 class="slot-name">{{ slot.name }}</h3>
+        <span class="slot-type">{{ slot.typeBadge }}</span>
+        <p class="slot-desc">{{ slot.usageContext }}</p>
+      </article>
+    }
+  </div>
+
+  <div class="backpack-box pokedex-card">
+    <h3 class="backpack-title">{{ state.copy().stackSection.backpackTitle }}</h3>
+    <div class="backpack-grid">
+      @for (cat of state.copy().stackSection.backpack; track cat.categoryName) {
+        <div class="backpack-Pocket">
+          <h4 class="pocket-name">{{ cat.categoryName }}</h4>
+          <div class="stack-pills">
+            @for (item of cat.items; track item) {
+              <span class="tech-pill">{{ item }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- 4. EXPERIENCIA Y FORMACIÓN -> CAMINO A LA LIGA / MEDALLAS -->
+<section id="league-experience" class="section-block" aria-labelledby="league-heading">
+  <header class="section-header">
+    <h2 id="league-heading" class="section-title">{{ state.copy().leagueSection.title }}</h2>
+    <p class="section-subtitle">{{ state.copy().leagueSection.subtitle }}</p>
+  </header>
+
+  <div class="league-timeline">
+    @for (item of state.copy().leagueSection.items; track item.badgeId) {
+      <article class="gym-card pokedex-card">
+        <div class="gym-header">
+          <span class="gym-badge-id">{{ item.badgeId }}</span>
+          <span class="gym-status">{{ item.statusLabel }} · {{ item.period }}</span>
+        </div>
+        <h3 class="gym-role">{{ item.role }}</h3>
+        <p class="gym-org">{{ item.organization }}</p>
+        <ul class="gym-highlights">
+          @for (point of item.highlights; track point) {
+            <li>{{ point }}</li>
+          }
+        </ul>
+      </article>
+    }
+  </div>
+</section>
+
+<!-- 5. CONTACTO Y FOOTER -> CENTRO POKÉMON / GUARDAR PARTIDA -->
+<footer id="pokemon-center" class="save-footer pokedex-card" aria-labelledby="footer-heading">
+  <header class="section-header">
+    <h2 id="footer-heading" class="section-title">{{ state.copy().footerSection.title }}</h2>
+    <p class="section-subtitle">{{ state.copy().footerSection.subtitle }}</p>
+  </header>
+
+  <div class="footer-actions">
+    <button type="button" class="btn-primary" (click)="saveGameAction()">
+      {{ state.copy().footerSection.saveBtn }}
+    </button>
+    <a [href]="state.contact.cvUrl" download="CV_Pablo_Herrera_Dominguez.pdf" class="btn-secondary">
+      {{ state.copy().trainer.downloadCv }}
+    </a>
+  </div>
+
+  @if (gameSaved()) {
+    <p class="save-confirm" role="status">{{ state.copy().footerSection.savedConfirmation }}</p>
+  }
+
+  <div class="footer-meta">
+    <span>Pablo Herrera Domínguez · Angular 21 Standalone + Signals</span>
+
+    <div class="footer-links">
+      @if (!state.isPlaceholder(state.contact.email)) {
+        <a [href]="'mailto:' + state.contact.email" class="footer-link">✉️ {{ state.contact.email }}</a>
+      } @else {
+        <span>EMAIL: {{ state.contact.email }}</span>
+      }
+
+      @if (!state.isPlaceholder(state.contact.github)) {
+        <a [href]="state.contact.github" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub ↗</a>
+      } @else {
+        <span>GITHUB: {{ state.contact.github }}</span>
+      }
+
+      @if (!state.isPlaceholder(state.contact.linkedin)) {
+        <a [href]="state.contact.linkedin" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn ↗</a>
+      } @else {
+        <span>LINKEDIN: {{ state.contact.linkedin }}</span>
+      }
+    </div>
+  </div>
+</footer>

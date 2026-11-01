@@ -1,0 +1,27 @@
+<header class="pokedex-header">
+  <div class="header-inner">
+    <div class="sensor-cluster">
+      <span class="lens-main" aria-hidden="true"></span>
+      <span class="led led-red pokedex-deco" aria-hidden="true"></span>
+      <span class="led led-amber pokedex-deco" aria-hidden="true"></span>
+      <span class="led led-green" aria-hidden="true"></span>
+    </div>
+
+    <div class="controls-cluster" role="toolbar" aria-label="Preferencias de interfaz">
+      <button
+        type="button"
+        class="ctrl-btn"
+        (click)="state.toggleLanguage()">
+        🌐 {{ state.lang() === 'es' ? 'ES ▸ EN' : 'EN ▸ ES' }}
+      </button>
+
+      <button
+        type="button"
+        class="ctrl-btn"
+        (click)="state.toggleTheme()"
+        [attr.aria-pressed]="state.isDarkMode()">
+        {{ state.isDarkMode() ? state.copy().header.themeLight : state.copy().header.themeDark }}
+      </button>
+    </div>
+  </div>
+</header>

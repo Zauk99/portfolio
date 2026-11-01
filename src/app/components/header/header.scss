@@ -1,0 +1,105 @@
+.pokedex-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg-surface);
+  border-bottom: 3px solid var(--border-color);
+  box-shadow: 0 3px 0 var(--accent-primary);
+}
+
+.header-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0.7rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.sensor-cluster {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.lens-main {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #FFFFFF 12%, var(--accent-primary) 55%, var(--c-charcoal) 100%);
+  border: 2px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.led {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-color);
+
+  &.led-red { background-color: var(--accent-primary); }
+  &.led-amber { background-color: var(--c-cartridge); }
+  &.led-green { background-color: var(--accent-success); }
+}
+
+.system-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-left: 0.25rem;
+}
+
+.system-id {
+  font-family: var(--font-pixel);
+  font-size: 0.58rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.03em;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-success);
+}
+
+.controls-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.ctrl-btn {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+  padding: 0.4rem 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.15s ease;
+
+  &:hover {
+    background-color: var(--bg-panel);
+    transform: translateY(-1px);
+  }
+
+  &.active,
+  &.ctrl-fast.active {
+    background-color: var(--accent-primary);
+    color: #FFFFFF;
+  }
+}

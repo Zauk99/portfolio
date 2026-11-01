@@ -1,0 +1,35 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  max-width: 1240px;
+  margin: 1.5rem auto 3rem;
+  padding: 0 1rem;
+  gap: 1.75rem;
+  align-items: stretch;
+}
+
+.sidebar-container {
+  width: 100%;
+}
+
+.content-container {
+  flex: 1;
+  min-width: 0; /* Previene desbordamiento horizontal en bloques flex/grid */
+}
+
+@media (min-width: 960px) {
+  .main-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 2rem auto 4rem;
+    padding: 0 1.5rem;
+    gap: 2rem;
+  }
+
+  .sidebar-container {
+    width: 340px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 88px;
+  }
+}

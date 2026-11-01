@@ -1,0 +1,17 @@
+<a class="skip-link" href="#main-content">
+  {{ state.lang() === 'es' ? 'Saltar al contenido principal' : 'Skip to main content' }}
+</a>
+
+<app-header></app-header>
+
+<main class="main-layout" id="main-content">
+  <!-- Columna Izquierda: Tarjeta de Entrenador Fija -->
+  <aside class="sidebar-container" aria-label="Ficha de Entrenador y Contacto">
+    <app-sidebar></app-sidebar>
+  </aside>
+
+  <!-- Columna Derecha: Visor de Pokédex (Proyectos, Equipo, Liga y Contacto) -->
+  <section class="content-container" aria-label="Proyectos, Stack y Experiencia">
+    <app-content></app-content>
+  </section>
+</main>
