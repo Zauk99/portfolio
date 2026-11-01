@@ -2,7 +2,7 @@
 
 Portfolio profesional desarrollado con **Angular 21**, **TypeScript estricto**, **Componentes Standalone** y **Signals**, diseñado bajo el concepto visual **Pokédex Field OS**: una interfaz editorial técnica inspirada en manuales de campo japoneses y consolas clásicas, con un **Modo Rápido de Reclutador** para lectura ejecutiva en menos de 10 segundos.
 
-## Capturas de pantalla
+## Captura de pantalla
 
 ![alt text](image.png)
 
